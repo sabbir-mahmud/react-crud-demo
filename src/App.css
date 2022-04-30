@@ -1,0 +1,17 @@
+/* tailwind css area start */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tailwind css area end */
+/* font-family: 'Fira Code', monospace; */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* font-family: 'Fira Code', monospace; */
+
+/* applying font global */
+.app{
+    font-family: 'Fira Code', monospace;
+}
