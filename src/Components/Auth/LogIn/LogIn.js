@@ -1,9 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
+import useLogin from '../../../Hooks/useFirebase/useLogin';
 import './LogIn.css'
 
 const LogIn = () => {
+    const handleLogin = useLogin();
     return (
         <div className="logIn">
             {/* --------------------------------------------------
@@ -20,7 +22,7 @@ const LogIn = () => {
             <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
                 <div className="w-full md:w-3/5 relative py-3 sm:max-w-xl sm:mx-auto">
                     <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded sm:p-10">
-                        <form>
+                        <form onSubmit={handleLogin}>
                             <div className="max-w-md mx-auto">
                                 <div className="flex items-center space-x-5">
                                     <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
@@ -41,44 +43,46 @@ const LogIn = () => {
 
                                         <div className="py-3  flex md:flex-row flex-col items-center space-x-4">
                                             <Link className='text-underline text-blue' to='/reset-password'>forget your password?</Link>
-                                            <Link className='ml-3 text-underline text-blue' to='/reset-password'>create new account</Link>
+                                            <Link className='ml-3 text-underline text-blue' to='/register'>create new account</Link>
                                         </div>
 
                                         <div className="py-4 mb-3 flex items-center space-x-4">
                                             <input type="submit" className="bg-gray-600 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none" value="log in" />
                                         </div>
 
-                                        <div className="my-3">
-                                            <hr />
-                                        </div>
-                                        <div className="my-3">
-                                            <h3 className='text-center'>log in with social...</h3>
-                                        </div>
 
-                                        <div className="flex justify-center items-center space-x-4">
-                                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
-                                                    className="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 320 512">
-                                                    <path fill="currentColor"
-                                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-                                                    </path>
-                                                </svg>
-                                            </button>
-                                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google"
-                                                    className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-                                                    <path fill="currentColor"
-                                                        d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z">
-                                                    </path>
-                                                </svg>
-                                            </button>
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
+                        <div className="my-3">
+                            <hr />
+                        </div>
+                        <div className="my-3">
+                            <h3 className='text-center'>log in with social...</h3>
+                        </div>
+
+                        <div className="flex justify-center items-center space-x-4">
+                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                                    className="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google"
+                                    className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+                                    <path fill="currentColor"
+                                        d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z">
+                                    </path>
+                                </svg>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
             </div>
