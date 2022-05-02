@@ -1,13 +1,15 @@
 import React from 'react';
-import useManage from '../../../Hooks/useManage/useManage';
-import TableRow from './TableRow/TableRow';
+import useMyItemsProducts from '../../../Hooks/useMyItems/useMyItemsProducts';
+import TableRow from '../Manage/TableRow/TableRow';
 
-const Manage = () => {
-    const [products] = useManage();
+const MyItems = () => {
+
+    const { products, handleDelete } = useMyItemsProducts();
+
     return (
         <div className='container mx-auto my-3'>
             <div className="my-3">
-                <h3 className='text-2xl text-gray-600 text-center'>Manage all products in warehouse</h3>
+                <h3 className='text-2xl text-gray-600 text-center'>Products added by me</h3>
             </div>
 
 
@@ -36,8 +38,11 @@ const Manage = () => {
                         {
                             products.map(product => <TableRow
                                 key={product._id}
-                                product={product}>
-                                shipped
+                                product={product}
+                                btn0={handleDelete}
+                                btn0Value='Delete'
+                            >
+
                             </TableRow>)
                         }
                     </tbody>
@@ -48,4 +53,4 @@ const Manage = () => {
     );
 };
 
-export default Manage;
+export default MyItems;

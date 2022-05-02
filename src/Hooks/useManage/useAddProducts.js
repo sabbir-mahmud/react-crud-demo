@@ -9,14 +9,16 @@ const useAddProducts = () => {
         const model = e.target.productModel.value;
         const quantity = e.target.productQuantity.value;
         const supplier = e.target.supplier.value;
-        const userEmail = user?.email;
+        const email = user?.email;
+        const img = e.target.productImage.value;
 
         const product = {
             name,
             model,
             quantity,
             supplier,
-            userEmail
+            email,
+            img,
         }
 
         if (user?.email) {

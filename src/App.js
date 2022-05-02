@@ -9,6 +9,7 @@ import Navbar from './Components/Shared/Header/Navbar/Navbar';
 import Footer from './Components/Shared/Footer/Footer';
 import Manage from './Components/Pages/Manage/Manage';
 import AddItems from './Components/Pages/AddItems/AddItems';
+import MyItems from './Components/Pages/MyItems/MyItems';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/manage" element={<Manage />} />
+        <Route path="/my-items" element={<MyItems />} />
         <Route path="/add-products" element={<AddItems />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
