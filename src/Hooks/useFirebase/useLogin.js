@@ -20,7 +20,7 @@ const useLogin = () => {
         const password = e.target.password.value;
         signInWithEmailAndPassword(auth, email, password)
             .then((user) => {
-                if (user.emailVerified) {
+                if (user?.user?.emailVerified) {
                     setUser(user);
                     toast.info("You are logged in!");
                     setLoading(false);

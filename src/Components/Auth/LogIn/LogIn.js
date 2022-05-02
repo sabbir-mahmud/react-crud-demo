@@ -47,7 +47,7 @@ const LogIn = () => {
                                         </div>
 
                                         <div className="py-4 mb-3 flex items-center space-x-4">
-                                            <input type="submit" className="bg-gray-600 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none" value="log in" />
+                                            <input type="submit" className="bg-gray-600 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none hover:cursor-pointer" value="log in" />
                                         </div>
 
 

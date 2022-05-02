@@ -14,8 +14,8 @@ const Register = () => {
             setaAgree(false);
         };
     };
-    const agreeClass = "bg-gray-600 flex justify-center items-center w-full text-white px-4 py-3 rounded-md  focus:outline-none"
-    const disAgreeClass = "bg-gray-200 flex justify-center items-center w-full text-white px-4 py-3 rounded-md  focus:outline-none"
+    const agreeClass = "bg-gray-600 flex justify-center items-center w-full text-white px-4 py-3 rounded-md  focus:outline-none hover:cursor-pointer";
+    const disAgreeClass = "bg-gray-200 flex justify-center items-center w-full text-white px-4 py-3 rounded-md  focus:outline-none";
     return (
         <div className="register">
             {/* --------------------------------------------------
