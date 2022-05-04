@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TableRow = (state) => {
     const { name, model, quantity, supplier } = state.product;
@@ -18,9 +19,9 @@ const TableRow = (state) => {
             </td>
             <td className="px-6 py-4 text-right">
                 <button onClick={() => state.btn0(state.product._id)} href="/" className="font-medium mr-6 text-blue-600 dark:text-blue-500 hover:underline">{state.btn0Value}</button>
-                <button href="/" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</button>
+                <Link to={`/products/${state.product._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</Link>
             </td>
-        </tr>
+        </tr >
     );
 };
 

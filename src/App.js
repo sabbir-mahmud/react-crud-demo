@@ -10,6 +10,7 @@ import Footer from './Components/Shared/Footer/Footer';
 import Manage from './Components/Pages/Manage/Manage';
 import AddItems from './Components/Pages/AddItems/AddItems';
 import MyItems from './Components/Pages/MyItems/MyItems';
+import ProductDetails from './Components/Pages/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/manage" element={<Manage />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/my-items" element={<MyItems />} />
         <Route path="/add-products" element={<AddItems />} />
         <Route path="/login" element={<LogIn />} />
