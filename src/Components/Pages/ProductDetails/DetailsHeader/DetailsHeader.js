@@ -1,6 +1,8 @@
 import React from 'react';
+import ShippedStock from '../ShippedStock/ShippedStock';
+import UpdateQuantity from '../UpdateQuantity/UpdateQuantity';
 
-const DetailsHeader = ({ product, updateQuantity }) => {
+const DetailsHeader = ({ product, shippedStock, updateStock }) => {
     const { img, model, name, quantity, supplier } = product;
 
     return (
@@ -13,7 +15,11 @@ const DetailsHeader = ({ product, updateQuantity }) => {
                 <h3 className='text-md text-gray-600 '>Model: {model}</h3>
                 <h3 className='text-md text-gray-600 '>Quantity: {quantity}</h3>
                 <h3 className='text-md text-gray-600 '>Supplier: {supplier}</h3>
-                <button onClick={updateQuantity} className='py-3 px-10 my-5 bg-gray-600 text-white rounded shadow-md'>Shipped</button>
+                <ShippedStock shippedStock={shippedStock} />
+
+                <div className="my-3">
+                    <UpdateQuantity updateStock={updateStock} />
+                </div>
             </div>
         </div>
     );
