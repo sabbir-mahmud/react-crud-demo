@@ -31,6 +31,6 @@ const useMyItemsProducts = () => {
     }
 
     return { products, handleDelete };
-}
+};
 
 export default useMyItemsProducts;

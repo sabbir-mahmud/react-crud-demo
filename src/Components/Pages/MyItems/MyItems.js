@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useMyItemsProducts from '../../../Hooks/useMyItems/useMyItemsProducts';
 import TableRow from '../Manage/TableRow/TableRow';
 
@@ -16,6 +17,11 @@ const MyItems = () => {
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th colSpan='5' scope="col" className="px-6 py-3">
+                                <Link to='/add-products'>Add Product</Link>
+                            </th>
+                        </tr>
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Product name
