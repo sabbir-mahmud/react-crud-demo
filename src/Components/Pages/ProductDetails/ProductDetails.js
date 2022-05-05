@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useDetails from '../../../Hooks/useDetails/useDetails';
@@ -64,6 +65,9 @@ const ProductDetails = () => {
     }
     return (
         <div className='container mx-auto'>
+            <Helmet>
+                <title>{product.model}</title>
+            </Helmet>
             <DetailsHeader
                 product={product}
                 updateQuantity={updateQuantity}

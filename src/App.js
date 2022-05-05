@@ -12,6 +12,7 @@ import AddItems from './Components/Pages/AddItems/AddItems';
 import MyItems from './Components/Pages/MyItems/MyItems';
 import ProductDetails from './Components/Pages/ProductDetails/ProductDetails';
 import RequireAuth from './Components/Auth/RequireAuth/RequireAuth';
+import NotFound from './Components/Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/add-products" element={<AddItems />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
       <ToastContainer />

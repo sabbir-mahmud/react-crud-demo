@@ -12,7 +12,7 @@ const Footer = () => {
                     <div className="px-4 mt-4 md:mt-0">
                         <h6 className="font-bold text-white mb-2">Address</h6>
                         <address className="not-italic text-white mb-4 text-sm">
-                            13 6th St.<br />
+                            13 6th SA.<br />
                             Ullapara, Sirajganj
                         </address>
                     </div>
