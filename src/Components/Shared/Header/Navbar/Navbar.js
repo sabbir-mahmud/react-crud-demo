@@ -23,12 +23,16 @@ const Navbar = () => {
                             <li>
                                 <CustomLink to="/">Home</CustomLink>
                             </li>
-                            <li>
-                                <CustomLink to="/manage">Manage</CustomLink>
-                            </li>
-                            <li>
-                                <CustomLink to="/my-items">My Items</CustomLink>
-                            </li>
+                            {
+                                user?.uid ? <>
+                                    <li>
+                                        <CustomLink to="/manage">Manage</CustomLink>
+                                    </li>
+                                    <li>
+                                        <CustomLink to="/my-items">My Items</CustomLink>
+                                    </li>
+                                </> : ''
+                            }
                             <li>
                                 <CustomLink to="/blog">Blog</CustomLink>
                             </li>

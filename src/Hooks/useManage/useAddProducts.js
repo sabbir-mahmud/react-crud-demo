@@ -11,12 +11,16 @@ const useAddProducts = () => {
         const supplier = e.target.supplier.value;
         const email = user?.email;
         const img = e.target.productImage.value;
+        const price = e.target.productPrice.value;
+        const description = e.target.productDesc.value;
 
         const product = {
             name,
             model,
             quantity,
+            price,
             supplier,
+            description,
             email,
             img,
         }

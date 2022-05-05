@@ -33,28 +33,28 @@ const AddItems = () => {
                                 <div className="divide-y divide-gray-200">
                                     <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                         <div className="flex flex-col">
-                                            <label htmlFor='productName' className="leading-loose">Product Name:</label>
-                                            <input id="productName" name='productName' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="tp link" required />
+                                            <input id="productName" name='productName' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product Name: tp link" required />
                                         </div>
                                         <div className="flex flex-col">
-                                            <label htmlFor='productModel' className="leading-loose">Product Model:</label>
-                                            <input id="productModel" name='productModel' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Archer C6 V3.2" required />
+                                            <input id="productModel" name='productModel' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product Model: Archer C6 V3.2" required />
                                         </div>
                                         <div className="flex flex-col">
-                                            <label htmlFor='productImage' className="leading-loose">Product Image:</label>
-                                            <input id="productImage" name='productImage' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="http://www.img.com/ekahfide.png" required />
+                                            <input id="productImage" name='productImage' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product Image: http://www.img.com/ekahfide.png" required />
                                         </div>
                                         <div className="flex flex-col">
-                                            <label htmlFor='productQuantity' className="leading-loose">Product Quantity:</label>
-                                            <input id="productQuantity" name='productQuantity' type="number" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="10" required />
+                                            <input id="productPrice" name='productPrice' type="number" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product Price: $19" required />
                                         </div>
                                         <div className="flex flex-col">
-                                            <label htmlFor='supplier' className="leading-loose">Supplier:</label>
-                                            <input id="supplier" name='supplier' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="excel tech" required />
+                                            <input id="productQuantity" name='productQuantity' type="number" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product Quantity: 10" required />
                                         </div>
                                         <div className="flex flex-col">
-                                            <label htmlFor='userEmail' className="leading-loose">user email:</label>
-                                            <input id="userEmail" name='userEmail' type="number" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder={user?.email} disabled />
+                                            <input id="productDesc" name='productDesc' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Product description: this product used for improved your internet  " required />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <input id="supplier" name='supplier' type="text" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Supplier: excel tech" required />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <input id="userEmail" name='userEmail' type="number" className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder={`user email: ${user?.email}`} disabled />
                                         </div>
 
 
