@@ -3,6 +3,7 @@ import useUser from "./useUser";
 import auth from "../../Firebase/firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import generateToken from "./useJwt";
 
 const useLogin = () => {
     const { setUser, setLoading, setError, handleLogout } = useUser();
@@ -16,12 +17,14 @@ const useLogin = () => {
         setLoading(true);
         setError(null);
 
+
         const email = e.target.email.value;
         const password = e.target.password.value;
         signInWithEmailAndPassword(auth, email, password)
             .then((user) => {
                 if (user?.user?.emailVerified) {
                     setUser(user);
+                    generateToken(user.user.email);
                     toast.info("You are logged in!");
                     setLoading(false);
                     navigate(from);
