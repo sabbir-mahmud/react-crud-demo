@@ -7,6 +7,8 @@ import DetailsHeader from './DetailsHeader/DetailsHeader';
 const ProductDetails = () => {
     const productID = useParams();
     const { product, loading, setProduct } = useDetails(productID.id);
+
+    // shipped a single product
     const updateQuantity = () => {
         setProduct({ ...product, quantity: product.quantity - 1 });
         const id = product._id;
@@ -19,19 +21,20 @@ const ProductDetails = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-    }
+    };
 
+    // shipped same product multiple times
     const shippedStock = (e) => {
-        const id = product._id;
         e.preventDefault();
+        const id = product._id;
         const qtn = e.target.shipped.value
-        const url = `http://localhost:5000/api/product/shipped/${id}`;
+        const url = `http://localhost:5000/api/products/shipped/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(qtn)
+            body: JSON.stringify({ quantity: qtn })
 
         })
             .then(res => res.json())
@@ -41,21 +44,21 @@ const ProductDetails = () => {
 
     }
     const updateStock = (e) => {
-        const id = product._id;
         e.preventDefault();
-        const qtn = parseInt(e.target.stockUpdate.value)
-        const url = `http://localhost:5000/api/product/shipped/${id}`;
+        const id = product._id;
+        const qtn = e.target.stockUpdate.value
+        const url = `http://localhost:5000/api/product/stock/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(qtn)
+            body: JSON.stringify({ quantity: qtn })
 
         })
             .then(res => res.json())
             .then(data => console.log(data))
-        setProduct({ ...product, quantity: product.quantity = product.quantity + qtn });
+        setProduct({ ...product, quantity: product.quantity = parseInt(product.quantity) + parseInt(qtn) });
         toast.info(`${qtn} items has been added to stock`);
 
     }
