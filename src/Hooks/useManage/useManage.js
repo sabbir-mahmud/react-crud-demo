@@ -5,7 +5,7 @@ import useUser from "../useFirebase/useUser";
 const useManage = () => {
     const [products, setProducts] = useState([]);
     const [loadingData, setLoadingData] = useState(true);
-    const { user, loading } = useUser();
+    const { user, handleLogout, loading } = useUser();
 
     useEffect(() => {
         if (!loading) {
@@ -23,6 +23,7 @@ const useManage = () => {
                     }
                     else {
                         toast.error(data.message);
+                        handleLogout();
                     }
                     setLoadingData(false);
                 })

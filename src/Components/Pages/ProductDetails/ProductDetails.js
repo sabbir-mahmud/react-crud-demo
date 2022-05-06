@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useDetails from '../../../Hooks/useDetails/useDetails';
+import Loading from '../../Shared/Loading/Loading';
 import DetailsHeader from './DetailsHeader/DetailsHeader';
 
 const ProductDetails = () => {
@@ -13,7 +14,7 @@ const ProductDetails = () => {
     const updateQuantity = () => {
         setProduct({ ...product, quantity: product.quantity - 1 });
         const id = product._id;
-        const url = `http://localhost:5000/api/products/shipped/${id}`;
+        const url = `https://sabbir-assignment-11.herokuapp.com/api/products/shipped/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -29,7 +30,7 @@ const ProductDetails = () => {
         e.preventDefault();
         const id = product._id;
         const qtn = e.target.shipped.value
-        const url = `http://localhost:5000/api/products/shipped/${id}`;
+        const url = `https://sabbir-assignment-11.herokuapp.com/api/products/shipped/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -48,7 +49,7 @@ const ProductDetails = () => {
         e.preventDefault();
         const id = product._id;
         const qtn = e.target.stockUpdate.value
-        const url = `http://localhost:5000/api/product/stock/${id}`;
+        const url = `https://sabbir-assignment-11.herokuapp.com/api/product/stock/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -68,12 +69,14 @@ const ProductDetails = () => {
             <Helmet>
                 <title>{product.model}</title>
             </Helmet>
-            <DetailsHeader
-                product={product}
-                updateQuantity={updateQuantity}
-                shippedStock={shippedStock}
-                updateStock={updateStock}
-            />
+            {
+                loading ? <Loading /> : <DetailsHeader
+                    product={product}
+                    updateQuantity={updateQuantity}
+                    shippedStock={shippedStock}
+                    updateStock={updateStock}
+                />
+            }
 
         </div>
     );

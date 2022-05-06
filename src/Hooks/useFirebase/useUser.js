@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import auth from "../../Firebase/firebase.init";
 import { toast } from "react-toastify";
+import { Navigate } from "react-router-dom";
 
 const useUser = () => {
     const [user, setUser] = useState({});
@@ -23,6 +24,7 @@ const useUser = () => {
 
     const handleLogout = () => {
         auth.signOut();
+        Navigate('/login')
         setUser({});
         toast.info("You are logged out!");
     }

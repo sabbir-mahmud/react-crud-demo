@@ -3,6 +3,7 @@ import useUser from "../useFirebase/useUser";
 
 const useProducts = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { user } = useUser();
 
     useEffect(() => {
@@ -16,12 +17,13 @@ const useProducts = () => {
         })
             .then(res => res.json())
             .then(data => {
+                setLoading(false);
                 setProducts(data);
             });
     }, [user])
 
 
-    return { products, setProducts };
+    return { products, loading, setProducts };
 
 }
 
