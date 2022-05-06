@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import useManage from '../../../Hooks/useManage/useManage';
 import TableRow from './TableRow/TableRow';
 
-const Manage = () => {
+const Inventory = () => {
     const { products, loadingData, shippedOne } = useManage();
     return (
         <div className='container mx-auto my-3'>
             <Helmet>
-                <title>Manage :isp warehouse</title>
+                <title>inventory :isp warehouse</title>
             </Helmet>
             {
                 loadingData ? <h1 className='text-center'>Loading...</h1> : <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -61,4 +61,4 @@ const Manage = () => {
     );
 };
 
-export default Manage;
+export default Inventory;

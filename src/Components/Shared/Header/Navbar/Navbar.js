@@ -25,7 +25,7 @@ const Navbar = () => {
                             </li>
 
                             <li>
-                                <CustomLink to="/manage">Manage</CustomLink>
+                                <CustomLink to="/inventory">Inventory</CustomLink>
                             </li>
                             <li>
                                 <CustomLink to="/my-items">My Items</CustomLink>
