@@ -8,9 +8,22 @@ const useMyItemsProducts = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/api/products?email=${user?.email}`)
+            fetch(`http://localhost:5000/api/products?email=${user?.email}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem(`${user.email}`)}`
+                }
+            })
                 .then(res => res.json())
-                .then(data => setProducts(data));
+                .then(data => {
+                    if (Array.isArray(data)) {
+                        setProducts(data);
+                    }
+                    else {
+                        toast.error(data.message);
+                    }
+                })
         }
 
     }, [user]);
