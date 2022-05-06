@@ -6,7 +6,7 @@ const useProducts = () => {
     const { user } = useUser();
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/products/latests", {
+        fetch("https://sabbir-assignment-11.herokuapp.com/api/products/latests", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

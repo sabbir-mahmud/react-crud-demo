@@ -8,7 +8,7 @@ const useMyItemsProducts = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/api/products?email=${user?.email}`, {
+            fetch(`https://sabbir-assignment-11.herokuapp.com/api/products?email=${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const useMyItemsProducts = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/api/products/${id}`;
+        const url = `https://sabbir-assignment-11.herokuapp.com/api/products/${id}`;
 
         fetch(url, {
             method: 'delete',

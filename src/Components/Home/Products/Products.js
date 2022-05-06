@@ -5,7 +5,7 @@ const Products = ({ product }) => {
     const { supplier, quantity, name, model, img, } = product;
     return (
 
-        <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-sm mx-auto bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <a href="/">
                 <img className="rounded-t-lg" src={img} alt="" />
             </a>

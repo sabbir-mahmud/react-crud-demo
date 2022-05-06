@@ -26,7 +26,7 @@ const useAddProducts = () => {
         }
 
         if (user?.email) {
-            const url = `http://localhost:5000/api/products`
+            const url = `https://sabbir-assignment-11.herokuapp.com/api/products`
             fetch(url, {
                 method: "POST",
                 headers: {

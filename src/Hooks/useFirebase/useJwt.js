@@ -1,5 +1,5 @@
 const generateToken = async (email) => {
-    fetch("http://localhost:5000/api/login", {
+    fetch("https://sabbir-assignment-11.herokuapp.com/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

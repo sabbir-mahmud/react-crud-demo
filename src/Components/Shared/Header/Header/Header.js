@@ -5,7 +5,7 @@ const Header = () => {
     const { email, img, model, name, quantity, supplier, description } = product;
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products/latest')
+        fetch('https://sabbir-assignment-11.herokuapp.com/api/products/latest')
             .then(res => res.json())
             .then(data => setProduct(data[0]))
     }, [])
@@ -24,8 +24,8 @@ const Header = () => {
                     <h2 className='text-gray-600 text-xl'>Quantity: {quantity}</h2>
                 </div>
             </div>
-            <p className='my-3 text-md text-justify text-gray-600'>Name: {model}</p>
-            <p className='mb-7 mt-3 text-md text-justify text-gray-600'>
+            <p className='my-3 p-3 text-md text-justify text-gray-600'>Name: {model}</p>
+            <p className='mb-7 p-3 mt-3 text-md text-justify text-gray-600'>
                 {description}
             </p>
 

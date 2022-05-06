@@ -9,7 +9,7 @@ const useManage = () => {
 
     useEffect(() => {
         if (!loading) {
-            fetch('http://localhost:5000/api/products', {
+            fetch('https://sabbir-assignment-11.herokuapp.com/api/products', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const useManage = () => {
     }, [loading, user]);
 
     const shippedOne = (id) => {
-        const url = `http://localhost:5000/api/products/shipped/${id}`;
+        const url = `https://sabbir-assignment-11.herokuapp.com/api/products/shipped/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

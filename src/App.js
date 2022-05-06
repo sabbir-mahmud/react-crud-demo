@@ -13,6 +13,7 @@ import ProductDetails from './Components/Pages/ProductDetails/ProductDetails';
 import RequireAuth from './Components/Auth/RequireAuth/RequireAuth';
 import NotFound from './Components/Pages/NotFound/NotFound';
 import Inventory from './Components/Pages/Manage/Manage';
+import Blog from './Components/Pages/Blog/Blog';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/inventory/:id" element={<RequireAuth><ProductDetails /></RequireAuth>} />
         <Route path="/my-items" element={<RequireAuth><MyItems /></RequireAuth>} />
         <Route path="/add-products" element={<RequireAuth><AddItems /></RequireAuth>} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
         <Route path='*' element={<NotFound />} />
