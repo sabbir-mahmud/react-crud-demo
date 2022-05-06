@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 
 const TableRow = (state) => {
     const { name, model, quantity, supplier } = state.product;
+    let qtn;
+    if (quantity <= 0) {
+        qtn = 'Out of stock';
+    }
+    else {
+        qtn = quantity;
+    }
     return (
         <tr className="border-b bg-gray-600 ">
             <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap">
@@ -12,7 +19,7 @@ const TableRow = (state) => {
                 {model}
             </td>
             <td className="px-6 py-4 text-white">
-                {quantity}
+                {qtn}
             </td>
             <td className="px-6 py-4 text-white">
                 {supplier}

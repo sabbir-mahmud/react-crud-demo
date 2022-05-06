@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 import useProducts from '../../Hooks/useHome/useProducts';
 import Header from '../Shared/Header/Header/Header';
 import Products from './Products/Products';
@@ -14,9 +15,9 @@ const Home = () => {
             <Header></Header>
             <div className="container mx-auto my-3">
                 <div className="my-3">
-                    <h3 className='text-2xl text-gray-600 text-center'>Manage Product</h3>
+                    <Link to='/manage' className='text-2xl text-gray-600 hover:underline'>Manage Product</Link>
                 </div>
-                <div className="mt-9 grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="mt-9 grid grid-cols-1 sm:grid-col-2 md:grid-cols-3 gap-5">
                     {
                         products.map(product => <Products
                             key={product._id}

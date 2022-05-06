@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const Header = () => {
     const [product, setProduct] = useState({});
-    const { email, img, model, name, quantity, supplier } = product;
+    const { email, img, model, name, quantity, supplier, description } = product;
+
+    console.log(product);
 
     useEffect(() => {
         fetch('http://localhost:5000/api/products/latest')
@@ -24,6 +26,10 @@ const Header = () => {
                     <h2 className='text-gray-600 text-xl'>Quantity: {quantity}</h2>
                 </div>
             </div>
+            <p className='my-3 text-md text-justify text-gray-600'>Name: {model}</p>
+            <p className='mb-7 mt-3 text-md text-justify text-gray-600'>
+                {description}
+            </p>
 
         </div>
     );
