@@ -4,8 +4,6 @@ const Header = () => {
     const [product, setProduct] = useState({});
     const { email, img, model, name, quantity, supplier, description } = product;
 
-    console.log(product);
-
     useEffect(() => {
         fetch('http://localhost:5000/api/products/latest')
             .then(res => res.json())

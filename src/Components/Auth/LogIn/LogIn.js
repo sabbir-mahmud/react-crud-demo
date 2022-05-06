@@ -2,10 +2,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import useLogin from '../../../Hooks/useFirebase/useLogin';
+import useSocial from '../../../Hooks/useFirebase/useSocial';
 import './LogIn.css'
 
 const LogIn = () => {
     const handleLogin = useLogin();
+    const { handleGoogleSignIn, handleFacebookLogin } = useSocial();
     return (
         <div className="logIn">
             {/* --------------------------------------------------
@@ -64,7 +66,7 @@ const LogIn = () => {
                         </div>
 
                         <div className="flex justify-center items-center space-x-4">
-                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
+                            <button onClick={handleFacebookLogin} className="mr-6 p-5 rounded-full text-white bg-gray-800">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                                     className="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 320 512">
@@ -73,7 +75,7 @@ const LogIn = () => {
                                     </path>
                                 </svg>
                             </button>
-                            <button className="mr-6 p-5 rounded-full text-white bg-gray-800">
+                            <button onClick={handleGoogleSignIn} className="mr-6 p-5 rounded-full text-white bg-gray-800">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google"
                                     className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                                     <path fill="currentColor"
